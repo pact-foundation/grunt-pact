@@ -1,13 +1,20 @@
 {
 	"name": "grunt-pact",
 	"description": "A grunt task to run pact easily",
-	"version": "0.0.1",
+	"version": "1.0.0",
 	"homepage": "https://github.com/pact-js/grunt-pact",
 	"author": {
 		"name": "Michel Boudreau",
 		"email": "michelboudreau@gmail.com",
 		"url": "codinghitchhiker.com"
 	},
+	"contributors": [
+		{
+			"name": "David Stanciu",
+			"email": "davidstanciu29@gmail.com",
+			"url": "https://github.com/dstanciu29"
+		}
+	],
 	"repository": {
 		"type": "git",
 		"url": "git://github.com/pact-js/grunt-pact.git"
@@ -32,7 +39,7 @@
 		"grunt": "~0.4.5"
 	},
 	"dependencies": {
-		"pact-node": "~0.0.3"
+		"pact-node": "~1.0.0"
 	},
 	"devDependencies": {
 		"grunt-contrib-clean": "^0.5.0",
@@ -48,8 +55,7 @@
 		"lint": "./node_modules/.bin/jscs",
 		"watch": "./node_modules/.bin/nodemon -x npm run dev",
 		"watch:debug": "./node_modules/.bin/nodemon --debug -q -w assets/ --ext '.' --exec 'npm run lint'",
-		"dev": "npm run clean && npm run lint --force && npm test && node .",
-		"start": "npm run clean && npm run production",
-		"stop": "npm run production:stop"
+		"dev": "npm run clean && npm run lint --force && npm test",
+		"start": "npm run watch"
 	}
 }

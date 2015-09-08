@@ -32,7 +32,7 @@ module.exports = function(grunt) {
 
   // Whenever the "test" task is run, first clean the "tmp" dir, then run this
   // plugin's task(s), then test the result.
-  grunt.registerTask('test', ['pact'/*, 'nodeunit'*/, 'pact:default:stop', 'pact:withOptions:stop']);
+  grunt.registerTask('test', ['pact', 'nodeunit', 'pact:default:stop', 'pact:withOptions:stop']);
 
   // By default, lint and run all tests.
   grunt.registerTask('default', ['test']);
