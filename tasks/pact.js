@@ -18,13 +18,13 @@ module.exports = function (grunt) {
 
 		switch (arg) {
 			case 'start':
-				targets[this.target].start(function (server) {
+				targets[this.target].start().then(function (server) {
 					grunt.log.writeln('Pact started on port ' + server.port);
 					done();
 				});
 				break;
 			case 'stop':
-				targets[this.target].stop(function (server) {
+				targets[this.target].stop().then(function (server) {
 					grunt.log.writeln('Pact stopped on port ' + server.port);
 					done();
 				});
