@@ -1,7 +1,7 @@
 {
 	"name": "grunt-pact",
 	"description": "A grunt task to run pact easily",
-	"version": "1.2.0",
+	"version": "1.2.1",
 	"homepage": "https://github.com/pact-js/grunt-pact",
 	"author": {
 		"name": "Michel Boudreau",
@@ -39,7 +39,7 @@
 		"grunt": "~0.4.5"
 	},
 	"dependencies": {
-		"pact-node": "~1.2.0"
+		"pact-node": "~1.2.1"
 	},
 	"devDependencies": {
 		"grunt-contrib-clean": "^0.5.0",
