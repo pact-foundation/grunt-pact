@@ -11,8 +11,10 @@ node_js:
 - '5.4'
 matrix:
   fast_finish: true
+install:
+  - npm install -g grunt-cli
 script:
-- npm test
+  - npm test
 deploy:
   matrix:
   - provider: npm
