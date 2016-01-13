@@ -16,7 +16,6 @@ before_install:
 script:
   - npm test
 deploy:
-  matrix:
   - provider: npm
     email: michelboudreau@gmail.com
     api_key:
