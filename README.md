@@ -1,4 +1,6 @@
-# grunt-pact
+<img src="https://github.com/pact-foundation/pact-logo/blob/master/media/logo-black.png" width="200
+
+# Grunt Pact
 
 > A grunt task to run pact on node
 
