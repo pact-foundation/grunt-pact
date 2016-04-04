@@ -12,14 +12,15 @@ node_js:
 matrix:
   fast_finish: true
 before_install:
-  - npm install -g grunt-cli
+- npm install -g grunt-cli
 script:
-  - npm test
+- npm test
 deploy:
-  - provider: npm
-    email: michelboudreau@gmail.com
-    api_key:
-        secure: Go4wsjGN/sOUdlwd0u6y0O4ZDY5Yt1yVQ7rvXJEdjjuvyy9F+HhzFj/MRAezTyGB7zakHvXIAO1AwrY1V3sp5at9i6ImbW/ONCzpas5/4H5Awc24z9hfovb9oiyV60FFUC9i5XodbsZxddBFKYnNIyENGtgY3DTcHBxzKKDKPM8Ou+uGPXVW8s4XOD8VHA5BqEYC6EZOjbZURU2LO+1pJwMUWmIBdJYxGRc1Cdwm7FB0iXBKFvT6w3YqAphQkG5dZNNefmlO3IW7PKjHVeArJ8ltkR+SNyvza3eZ/BLyGGwhZLDWTxzfznIWRqaJWxb+zUL0ZrzQCn6+kzYZmEfr/DEX+2Jq8RBXU+sNMt6yokVPJm8XuESIrJX19OfzvEWJ6H7klOfItwGBAdrPQvx33DM0eMZv4XKLinKJroTQkLFhPL36uFYOmp5TZjExUaE3+JPC0+1IlZpdvGp/crxu8CIrumGs3g0EzQpp6v0oUksRhFUpH59EucGhRHl+7cMudGZviMryFThWg3cY+aENdVI/mg3jhm5e33/H0I2pTQlE6aRzOdvrPF+MpzMKKIIZYPiigOp63n1ddft5jogbYMY4rGcsWEXxVGAn9VbUl+GYYZn/Fahz03MOWxlsiOfy4ucMZx36Ws959dnvJ4j5SHl/noG3DaLj8aNpEUgVzRM=
-    on:
-      branch: master
-      tags: true
+- provider: npm
+  skip_cleanup: true
+  email: pact-foundation@googlegroups.com
+  api_key:
+    secure: VfU92fkX9T+qtBx6JQr/GNai0UdfR7DvYk6QlPkYou7pX+6HZNsAGYeY4TsSuy3mMoM2x5xMFiJ0yriye7RJzfDAPOArQ+43ZhvY9nV0YI6sjGmBnKw4CUPsVrAZqvE4Kqmq3pPWMuG/Y5M44liVcrsu/ksTw5m8hBsPgansNvzbhiLfEBUi2el8L9Ado1sRUV1x1oZNpNyi/Lyb7sWiZdZ+O5dPc782WpbsHOAjEJTYiJdQ0gm6DV8Le8hlWcHlbnBIc7KyIUfgxSxltA8WcLBMuKNqwkxD3FsoxT51GVcYQQVVVdlBhAC1cMUJjCich6c78YYdBrFI9AKq3ca/B2MKWiLKht56dTh658PyHMhw8emXG1dM2V2j/1bEn52i601bJoTNMKm9j5c3G3owPM4Jobsp58JaW8IJbKFpl/ng+KhX/DQAjr/ENJxtPrjYDcUqvkhd4pRffR3+a+M04meL6GPPI/7wSVq3mEDRcwtSjcktcFgXxrAPoux1M2le5JlxZ/CGA0xrP+Kj3zVvFnmhIwvY1iQSGKkKlvAtimTW1k3Z+sfzRQTFFN+2ZA5dPpnkI1Tu1OmsHWDJSWqNzcYuyxu0IQRYmRweCSbftVZOi8F6MJ+Y39eAGL7tAj4pbR2eR2xYziAizkeckfuAcgakLzkROCBZHacusU5V01Q=
+  on:
+    branch: master
+    tags: true

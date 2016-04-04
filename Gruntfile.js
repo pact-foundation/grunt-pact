@@ -17,7 +17,8 @@ module.exports = function (grunt) {
 					spec: 1,
 					consumer: 'consumerName',
 					provider: 'providerName'
-				}
+				},
+				src: 'test/**/test.js'
 			}
 		},
 
