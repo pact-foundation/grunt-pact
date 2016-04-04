@@ -27,7 +27,7 @@ module.exports = function (grunt) {
 					_.each(files, function(f){
 						_.each(f.src, function(file){
 							var func = require(path.resolve(file));
-							if(typeof func == 'function') {
+							if(_.isFunction(func)) {
 								func(server);
 							}
 						})
