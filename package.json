@@ -41,6 +41,7 @@
     "rimraf": "^2.4.2"
   },
   "scripts": {
+    "prepublish": "npm test",
     "test": "grunt test",
     "clean": "rimraf logs/*",
     "lint": "jscs",
