@@ -1,8 +1,12 @@
-<img src="https://github.com/pact-foundation/pact-logo/blob/master/media/logo-black.png" width="200">
+<img src="https://raw.githubusercontent.com/pact-foundation/pact-logo/master/media/logo-black.png" width="200">
 
 # Grunt Pact
 
-> A grunt task to run pact on node
+> UPGRADE NOTICE
+
+> If you are using grunt-pact as a dependency in your project, please update it to @pact-foundation/grunt-pact.
+
+A grunt task to run pact on node.
 
 ## Getting Started
 This plugin requires Grunt `~0.4.5`
@@ -28,10 +32,20 @@ In your project's Gruntfile, add a section named `pact` to the data object passe
 grunt.initConfig({
   pact: {
     options: {
-      // Task-specific options go here.
+      // Pact Specific Options Go Here
+      port: <Number>, // Port number that the server runs on, defaults to 1234
+      host: <String>, // Host on which to bind the server on, defaults to 'localhost'
+      log: <String>, // File to log output on relative to current working directory, defaults to none
+      ssl: <Boolean>, // Create a self-signed SSL cert to run the server over HTTPS, defaults to 'false'
+      cors: <Boolean>, // Allow CORS OPTION requests to be accepted, defaults to 'false'
+      dir: <String>, // Directory to write the pact contracts relative to the current working directory, defaults to none
+      spec: <Number>, // The pact specification version to use when writing pact contracts, defaults to '1'
+      consumer: <String>, // The name of the consumer to be written to the pact contracts, defaults to none
+      provider: <String> // The name of the provider to be written to the pact contracts, defaults to none
     },
     your_target: {
-      // Target-specific file lists and/or options go here.
+      // Specify Pact configuration files here
+      src:['mocks/**/*.pact.js']
     },
   },
 });
@@ -39,53 +53,59 @@ grunt.initConfig({
 
 ### Options
 
-#### options.separator
+All pact-mock-service options are available to grunt-pact.
+
+#### options.port
+Type: `Number`
+Default value: `1234`
+
+Port number that the server runs on.
+
+#### options.host
 Type: `String`
-Default value: `',  '`
+Default value: `'localhost'`
 
-A string value that is used to do something with whatever.
+Host on which to bind the server on.  You probably don't need to use this.
 
-#### options.punctuation
+#### options.log
+Type: `String`
+Default value: `''`
+
+File to log output on relative to current working directory.
+
+#### options.ssl
+Type: `Boolean`
+Default value: `false`
+
+Create a self-signed SSL cert to run the server over HTTPS.
+
+#### options.cors
+Type: `Boolean`
+Default value: `false`
+
+Allow CORS OPTION requests to be accepted.
+
+#### options.dir
+Type: `String`
+Default value: `''`
+
+Directory to write the pact contracts relative to the current working directory.
+
+#### options.spec
+Type: `Number`
+Default value: `1`
+
+The pact specification version to use when writing pact contracts.
+
+#### options.consumer
+Type: `String`
+Default value: `''`
+
+The name of the consumer to be written to the pact contracts. This can be set via the API.
+
+#### options.provider
 Type: `String`
 Default value: `'.'`
 
-A string value that is used to do something else with whatever else.
+The name of the provider to be written to the pact contracts. This can be set via the API.
 
-### Usage Examples
-
-#### Default Options
-In this example, the default options are used to do something with whatever. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result would be `Testing, 1 2 3.`
-
-```js
-grunt.initConfig({
-  pact: {
-    options: {},
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
-  },
-});
-```
-
-#### Custom Options
-In this example, custom options are used to do something else with whatever else. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result in this case would be `Testing: 1 2 3 !!!`
-
-```js
-grunt.initConfig({
-  pact: {
-    options: {
-      separator: ': ',
-      punctuation: ' !!!',
-    },
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
-  },
-});
-```
-
-## Contributing
-In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
-
-## Release History
-_(Nothing yet)_
