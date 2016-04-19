@@ -1,5 +1,11 @@
 <img src="https://raw.githubusercontent.com/pact-foundation/pact-logo/master/media/logo-black.png" width="200">
 
+[![Build Status](https://travis-ci.org/pact-foundation/grunt-pact.svg?branch=master)](https://travis-ci.org/pact-foundation/grunt-pact)
+[![npm](https://img.shields.io/npm/v/@pact-foundation/grunt-pact.svg?maxAge=2592000)](https://www.npmjs.com/package/@pact-foundation/grunt-pact)
+[![npm](https://img.shields.io/npm/dt/pact-foundation/grunt-pact.svg?maxAge=2592000)](https://www.npmjs.com/package/@pact-foundation/grunt-pact)
+[![npm](https://img.shields.io/npm/l/pact-foundation/grunt-pact.svg?maxAge=2592000)](https://www.npmjs.com/package/@pact-foundation/grunt-pact)
+[![npm](https://img.shields.io/david/pact-foundation/grunt-pact.svg?maxAge=2592000)](https://www.npmjs.com/package/@pact-foundation/grunt-pact)
+
 # Grunt Pact
 
 > UPGRADE NOTICE
