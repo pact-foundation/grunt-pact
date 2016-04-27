@@ -24,13 +24,17 @@ module.exports = function (grunt) {
 					grunt.log.writeln('Pact started on port ' + server.options.port);
 
 					// Go through each files and call it with the server instance
-					_.each(files, function(f){
-						_.each(f.src, function(file){
-							var func = require(path.resolve(file));
-							if(_.isFunction(func)) {
-								func(server);
+					_.each(files, function (f) {
+						_.each(f.src, function (file) {
+							try {
+								var func = require(path.resolve(file));
+								if (_.isFunction(func)) {
+									func(server);
+								}
+							} catch (e) {
+								grunt.log.error('Grunt-pact could not include file `' + file + '`: ' + e.stack);
 							}
-						})
+						});
 					});
 
 					done();

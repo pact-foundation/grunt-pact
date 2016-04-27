@@ -18,7 +18,7 @@ module.exports = function (grunt) {
 					consumer: 'consumerName',
 					provider: 'providerName'
 				},
-				src: 'test/**/test.js'
+				src: 'test/**/*.pact.js'
 			}
 		},
 
