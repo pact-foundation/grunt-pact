@@ -21,28 +21,30 @@ module.exports = function (grunt) {
 		switch (arg) {
 			case 'start':
 				targets[this.target].start().then(function (server) {
-					grunt.log.writeln('Pact started on port ' + server.options.port);
+					grunt.log.ok('Pact started on port ' + server.options.port);
 
 					// Go through each files and call it with the server instance
 					_.each(files, function (f) {
 						_.each(f.src, function (file) {
 							try {
 								var func = require(path.resolve(file));
+								grunt.verbose.writeln('Including pact file `' + file + '`');
 								if (_.isFunction(func)) {
 									func(server);
 								}
 							} catch (e) {
-								grunt.log.error('Grunt-pact could not include file `' + file + '`: ' + e.stack);
+								grunt.log.error('Grunt-pact could not include file `' + file + '` because of error, Skipping over.\n' + e.stack);
 							}
 						});
 					});
 
+					grunt.log.ok('Done including Pact files.');
 					done();
 				});
 				break;
 			case 'stop':
 				targets[this.target].stop().then(function (server) {
-					grunt.log.writeln('Pact stopped on port ' + server.options.port);
+					grunt.log.ok('Pact stopped on port ' + server.options.port);
 					done();
 				});
 				break;

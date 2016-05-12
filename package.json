@@ -1,12 +1,9 @@
 {
   "name": "@pact-foundation/grunt-pact",
   "description": "A grunt task to run pact easily",
-  "version": "1.4.1",
+  "version": "3.0.0",
   "homepage": "https://github.com/pact-foundation/grunt-pact",
   "author": "Michel Boudreau <michelboudreau@gmail.com> (codinghitchhiker.com)",
-  "contributors": [
-    "David Stanciu <davidstanciu29@gmail.com> (https://github.com/dstanciu29)"
-  ],
   "repository": {
     "type": "git",
     "url": "git://github.com/pact-foundation/grunt-pact.git"
@@ -28,7 +25,7 @@
     "grunt": ">=0.4.0"
   },
   "dependencies": {
-    "@pact-foundation/pact-node": "~2.0.1",
+    "@pact-foundation/pact-node": "~3.0.0",
     "underscore": "^1.8.3"
   },
   "devDependencies": {
