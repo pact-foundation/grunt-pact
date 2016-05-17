@@ -45,7 +45,7 @@ module.exports = function (grunt) {
 		wait: {
 			all: {
 				options: {
-					delay: 3 * 1000
+					delay: 10 * 1000
 				}
 			}
 		}
