@@ -33,7 +33,11 @@ module.exports = function (grunt) {
 									func(server);
 								}
 							} catch (e) {
-								grunt.log.error('Grunt-pact could not include file `' + file + '` because of error, Skipping over.\n' + e.stack);
+								if(options.force) {
+									grunt.log.error('Grunt-pact could not include file `' + file + '` because of error, Force detected, Skipping over.\n' + e.stack);
+								}else{
+									grunt.fail.warn('Grunt-pact could not include file `' + file + '` because of error.\n' + e.stack);
+								}
 							}
 						});
 					});

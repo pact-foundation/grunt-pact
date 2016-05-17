@@ -38,6 +38,8 @@ In your project's Gruntfile, add a section named `pact` to the data object passe
 grunt.initConfig({
   pact: {
     options: {
+      // Grunt Pact Specific Options
+      force: <Boolean>, // Continue if one of the pact files errors, defaults to 'false'
       // Pact Specific Options Go Here
       port: <Number>, // Port number that the server runs on, defaults to 1234
       host: <String>, // Host on which to bind the server on, defaults to 'localhost'
@@ -60,6 +62,12 @@ grunt.initConfig({
 ### Options
 
 All pact-mock-service options are available to grunt-pact.
+
+#### options.force
+Type: `Boolean`
+Default value: `false`
+
+While running through pact files, this will prevent grunt from stopping if an error occurs.  
 
 #### options.port
 Type: `Number`
