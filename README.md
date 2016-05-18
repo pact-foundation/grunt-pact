@@ -2,9 +2,9 @@
 
 [![Build Status](https://travis-ci.org/pact-foundation/grunt-pact.svg?branch=master)](https://travis-ci.org/pact-foundation/grunt-pact)
 [![npm](https://img.shields.io/npm/v/@pact-foundation/grunt-pact.svg?maxAge=2592000)](https://www.npmjs.com/package/@pact-foundation/grunt-pact)
-[![npm](https://img.shields.io/npm/dt/pact-foundation/grunt-pact.svg?maxAge=2592000)](https://www.npmjs.com/package/@pact-foundation/grunt-pact)
 [![npm](https://img.shields.io/github/license/pact-foundation/grunt-pact.svg?maxAge=2592000)](https://github.com/pact-foundation/grunt-pact/blob/master/LICENSE)
 [![npm](https://img.shields.io/david/pact-foundation/grunt-pact.svg?maxAge=2592000)](https://www.npmjs.com/package/@pact-foundation/grunt-pact)
+<!---[![npm](https://img.shields.io/npm/dt/pact-foundation/grunt-pact.svg?maxAge=2592000)](https://www.npmjs.com/package/@pact-foundation/grunt-pact)-->
 
 # Grunt Pact
 
