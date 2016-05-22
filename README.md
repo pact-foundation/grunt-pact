@@ -2,9 +2,9 @@
 
 [![Build Status](https://travis-ci.org/pact-foundation/grunt-pact.svg?branch=master)](https://travis-ci.org/pact-foundation/grunt-pact)
 [![npm](https://img.shields.io/npm/v/@pact-foundation/grunt-pact.svg?maxAge=2592000)](https://www.npmjs.com/package/@pact-foundation/grunt-pact)
-[![npm](https://img.shields.io/npm/dt/pact-foundation/grunt-pact.svg?maxAge=2592000)](https://www.npmjs.com/package/@pact-foundation/grunt-pact)
 [![npm](https://img.shields.io/github/license/pact-foundation/grunt-pact.svg?maxAge=2592000)](https://github.com/pact-foundation/grunt-pact/blob/master/LICENSE)
 [![npm](https://img.shields.io/david/pact-foundation/grunt-pact.svg?maxAge=2592000)](https://www.npmjs.com/package/@pact-foundation/grunt-pact)
+<!---[![npm](https://img.shields.io/npm/dt/pact-foundation/grunt-pact.svg?maxAge=2592000)](https://www.npmjs.com/package/@pact-foundation/grunt-pact)-->
 
 # Grunt Pact
 
@@ -15,7 +15,7 @@
 A grunt task to run pact on node.
 
 ## Getting Started
-This plugin requires Grunt `~0.4.5`
+This plugin requires Grunt `>=0.4.0` (works with 1.X)
 
 If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
 
