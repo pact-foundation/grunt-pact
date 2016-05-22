@@ -4,6 +4,7 @@ version: "{build}"
 # fix lineendings in Windows
 init:
   - git config --global core.autocrlf input
+  - npm install -g grunt-cli
 
 # Test against these versions of Node
 environment:
