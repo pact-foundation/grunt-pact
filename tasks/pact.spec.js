@@ -25,6 +25,8 @@ var http = require('http'),
  test.ifError(value)
  */
 
+var isWindows = process.platform === 'win32';
+
 function onReady() {
 	var amount = 0;
 	var deferred = q.defer();
@@ -58,41 +60,78 @@ function onReady() {
 	return deferred.promise;
 }
 
+var opts, cmd, file, args;
+
 exports.pact = {
+	setUp: function (done) {
+		opts = {
+			cwd: path.resolve(__dirname, '..'),
+			detached: !isWindows,
+			stdio: 'pipe',
+			encoding: 'utf-8'
+		};
+		cmd = path.resolve('./node_modules/.bin/grunt');
+
+		if (isWindows) {
+			file = 'cmd.exe';
+			args = ['/s', '/c'];
+			opts.windowsVerbatimArguments = true;
+		} else {
+			file = '/bin/sh';
+			args = ['-c'];
+		}
+		done();
+	},
 	default: function (test) {
 		test.expect(1);
-		var result = cp.spawnSync('grunt', ['pact:default'], {cwd: path.resolve(__dirname, '..')});
-		test.equal(result.status, 0);
+		var p = cp.spawnSync(file, args.concat(cmd + ' pact:default'), opts);
+		console.log(p.stdout);
+		console.log(p.stderr);
+		test.equal(p.status, 0);
 		test.done();
 	},
 	withOptions: function (test) {
 		test.expect(2);
-		var process = cp.spawn('grunt', ['pact:withOptions', 'wait'], {cwd: path.resolve(__dirname, '..')});
+		var p = cp.spawn(file, args.concat(cmd + ' pact:withOptions wait'), opts);
+
+		p.stdout.setEncoding('utf8');
+		p.stdout.on('data', console.log);
+		p.stderr.setEncoding('utf8');
+		p.stderr.on('data', console.log);
+		p.on('error', console.error);
 
 		onReady().then(function () {
 			test.ok(true);
 		});
 
-		process.on('close', function (code) {
+		p.on('close', function (code) {
 			test.equal(code, 0);
 			test.done();
 		});
 	},
 	failingPactFile: function (test) {
 		test.expect(1);
-		var result = cp.spawnSync('grunt', ['pact:failingPactFile'], {cwd: path.resolve(__dirname, '..')});
-		test.notEqual(result.status, 0);
+		var p = cp.spawnSync(file, args.concat(cmd + ' pact:failingPactFile'), opts);
+		console.log(p.stdout);
+		console.log(p.stderr);
+		test.notEqual(p.status, 0);
 		test.done();
 	},
 	failingPactFileForced: function (test) {
 		test.expect(2);
-		var process = cp.spawn('grunt', ['pact:failingPactFileForced', 'wait'], {cwd: path.resolve(__dirname, '..')});
+		var p = cp.spawn(file, args.concat(cmd + ' pact:failingPactFileForced wait'), opts);
+
+		p.stdout.setEncoding('utf8');
+		p.stdout.on('data', console.log);
+		p.stderr.setEncoding('utf8');
+		p.stderr.on('data', console.log);
+		p.on('error', console.error);
 
 		onReady().then(function () {
 			test.ok(true);
 		});
 
-		process.on('close', function (code) {
+		p.on('close', function (code) {
 			test.equal(code, 0);
 			test.done();
 		});

@@ -15,7 +15,7 @@ module.exports = function (grunt) {
 		var files = this.files;
 
 		if (!targets[this.target]) {
-			targets[this.target] = pact.create(options);
+			targets[this.target] = pact.createServer(options);
 		}
 
 		switch (arg) {
