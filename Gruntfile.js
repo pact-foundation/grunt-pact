@@ -1,10 +1,10 @@
 'use strict';
 
 module.exports = function (grunt) {
-	
+
 	grunt.initConfig({
 		clean: {},
-		
+
 		pact: {
 			default: {},
 			withOptions: {
@@ -36,8 +36,11 @@ module.exports = function (grunt) {
 				src: 'pacts/fail.pact.js'
 			}
 		},
-		
+
 		nodeunit: {
+			options: {
+				reporter: 'verbose'
+			},
 			tests: ['**/*.spec.js', '!node_modules/**/*']
 		},
 
@@ -49,13 +52,13 @@ module.exports = function (grunt) {
 			}
 		}
 	});
-	
+
 	grunt.loadTasks('tasks');
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-nodeunit');
-	
+
 	grunt.registerTask('test', ['nodeunit']);
-	
+
 	grunt.registerTask('default', ['test']);
 
 
@@ -65,7 +68,7 @@ module.exports = function (grunt) {
 		});
 		var done = this.async();
 		var timerId = 0;
-		var setTicker = function(delay, call){
+		var setTicker = function (delay, call) {
 			clearTimeout(timerId);
 			timerId = setTimeout(call, delay);
 		};
@@ -80,5 +83,5 @@ module.exports = function (grunt) {
 		grunt.log.writeln('Start waiting %dms', options.delay);
 		setTicker(options.delay, callback);
 	});
-	
+
 };
