@@ -41,7 +41,7 @@ module.exports = function (grunt) {
 			options: {
 				reporter: 'verbose'
 			},
-			tests: ['**/*.spec.js', '!node_modules/**/*']
+			tests: ['test/**/*.spec.js']
 		},
 
 		wait: {
