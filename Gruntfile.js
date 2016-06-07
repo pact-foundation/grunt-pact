@@ -6,6 +6,9 @@ module.exports = function (grunt) {
 		clean: {},
 
 		pact: {
+			/*options: {
+				logLevel: 'debug'
+			},*/
 			default: {},
 			withOptions: {
 				options: {
@@ -16,7 +19,8 @@ module.exports = function (grunt) {
 					log: 'log.txt',
 					spec: 1,
 					consumer: 'consumerName',
-					provider: 'providerName'
+					provider: 'providerName'/*,
+					logLevel: 'debug'*/
 				},
 				src: 'pacts/test.pact.js'
 			},

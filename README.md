@@ -40,7 +40,7 @@ grunt.initConfig({
     options: {
       // Grunt Pact Specific Options
       force: <Boolean>, // Continue if one of the pact files errors, defaults to 'false'
-      logLevel: <String>, // Specify log level, either 'debug', 'info', 'warn', 'error' or 'fatal', defaults to 'info'
+      logLevel: <String>, // Specify log level, either 'trace', 'debug', 'info', 'warn', 'error' or 'fatal', defaults to 'info'
       // Pact Specific Options Go Here
       port: <Number>, // Port number that the server runs on, defaults to 1234
       host: <String>, // Host on which to bind the server on, defaults to 'localhost'
@@ -74,7 +74,7 @@ While running through pact files, this will prevent grunt from stopping if an er
 Type: `String`
 Default value: `'info'`
 
-Sets the log level for Pact when running.  Can be set to 'debug', 'info', 'warn', 'error' or 'fatal'.
+Sets the log level for Pact when running.  Can be set to 'trace', 'debug', 'info', 'warn', 'error' or 'fatal'.
 
 #### options.port
 Type: `Number`
