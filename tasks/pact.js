@@ -11,9 +11,12 @@ module.exports = function (grunt) {
 	grunt.registerMultiTask('pact', 'A grunt task to run pact', function (arg) {
 		arg = arg || 'start';
 		var done = this.async();
-		var options = this.options();
+		var options = this.options({
+			logLevel: 'info'
+		});
 		var files = this.files;
 
+		pact.logLevel(options.logLevel);
 		if (!targets[this.target]) {
 			targets[this.target] = pact.createServer(options);
 		}
