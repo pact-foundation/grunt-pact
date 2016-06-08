@@ -6,21 +6,20 @@ module.exports = function (grunt) {
 		clean: {},
 
 		pact: {
-			/*options: {
+			options: {
 				logLevel: 'debug'
-			},*/
+			},
 			default: {},
 			withOptions: {
 				options: {
 					port: 9000,
 					host: 'localhost',
-					/* dir: require('path').resolve(__dirname, '../.tmp' + Math.floor(Math.random() * 1000)),*/
+					dir: require('path').resolve(__dirname, '../.tmp' + Math.floor(Math.random() * 1000)),
 					cors: true,
 					log: 'log.txt',
 					spec: 1,
 					consumer: 'consumerName',
-					provider: 'providerName'/*,
-					logLevel: 'debug'*/
+					provider: 'providerName'
 				},
 				src: 'pacts/test.pact.js'
 			},
