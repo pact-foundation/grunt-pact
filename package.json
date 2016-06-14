@@ -1,7 +1,7 @@
 {
   "name": "grunt-pact",
   "description": "A grunt task to run pact easily",
-  "version": "1.3.4",
+  "version": "1.3.5",
   "homepage": "https://github.com/pact-foundation/grunt-pact",
   "author": {
     "name": "Michel Boudreau",

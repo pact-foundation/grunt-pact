@@ -1,5 +1,8 @@
 <img src="https://github.com/pact-foundation/pact-logo/blob/master/media/logo-black.png" width="200">
 
+
+### THIS PROJECT IS NOW DEPRECATED, PLEASE UNINSTALL WITH `npm uninstall grunt-pact` AND INSTALL THE LATEST WITH `npm install @pact-foundation/grunt-pact --save-dev`
+
 # Grunt Pact
 
 > A grunt task to run pact on node
