@@ -109,6 +109,25 @@ exports.pact = {
 			test.done();
 		});
 	},
+	restart: function (test) {
+		test.expect(2);
+		var p = cp.spawn(file, args.concat(cmd + ' pact:withOptions pact:withOptions:restart wait'), opts);
+
+		p.stdout.setEncoding('utf8');
+		p.stdout.on('data', console.log);
+		p.stderr.setEncoding('utf8');
+		p.stderr.on('data', console.log);
+		p.on('error', console.error);
+
+		onReady().then(function () {
+			test.ok(true);
+		});
+
+		p.on('close', function (code) {
+			test.equal(code, 0);
+			test.done();
+		});
+	},
 	failingPactFile: function (test) {
 		test.expect(1);
 		var p = cp.spawnSync(file, args.concat(cmd + ' pact:failingPactFile'), opts);

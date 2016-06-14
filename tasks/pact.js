@@ -9,7 +9,7 @@ var targets = {};
 module.exports = function (grunt) {
 
 	grunt.registerMultiTask('pact', 'A grunt task to run pact', function (arg) {
-		arg = arg || 'start';
+		arg = arg || 'start'; // Default subtask to start
 		var done = this.async();
 		var options = this.options({
 			logLevel: 'info'
@@ -36,9 +36,9 @@ module.exports = function (grunt) {
 									func(server);
 								}
 							} catch (e) {
-								if(options.force) {
+								if (options.force) {
 									grunt.log.error('Grunt-pact could not include file `' + file + '` because of error, Force detected, Skipping over.\n' + e.stack);
-								}else{
+								} else {
 									grunt.fail.warn('Grunt-pact could not include file `' + file + '` because of error.\n' + e.stack);
 								}
 							}
@@ -54,6 +54,10 @@ module.exports = function (grunt) {
 					grunt.log.ok('Pact stopped on port ' + server.options.port);
 					done();
 				});
+				break;
+			case 'restart':
+				grunt.task.run(['pact:' + this.target + ':stop', 'pact:' + this.target + ':start']);
+				done();
 				break;
 		}
 	});
