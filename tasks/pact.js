@@ -48,11 +48,17 @@ module.exports = function (grunt) {
 
 					grunt.log.ok('Done including Pact files.');
 					done();
+				}, function(err){
+					grunt.log.error(err);
+					done();
 				});
 				break;
 			case 'stop':
 				targets[this.target].stop().then(function (server) {
 					grunt.log.ok('Pact stopped on port ' + server.options.port);
+					done();
+				}, function(err){
+					grunt.log.error(err);
 					done();
 				});
 				break;
