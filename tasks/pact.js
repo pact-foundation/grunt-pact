@@ -14,6 +14,7 @@ module.exports = function (grunt) {
 		var options = this.options({
 			logLevel: 'info'
 		});
+		options.logLevel = grunt.option('verbose') ? 'debug' : options.logLevel;
 		var files = this.files;
 
 		pact.logLevel(options.logLevel);
