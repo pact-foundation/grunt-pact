@@ -26,7 +26,7 @@ npm install grunt-pact --save-dev
 Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
 
 ```js
-grunt.loadNpmTasks('grunt-pact');
+grunt.loadNpmTasks('@pact-foundation/grunt-pact');
 ```
 
 ## The "pact" task
